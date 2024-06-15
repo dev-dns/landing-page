@@ -1,0 +1,51 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%; /* hsl(0, 0%, 100%) */
+    --foreground: 222.2 84% 4.9%; /* hsl(222.2 84% 4.9%) */
+
+    --primary: 222.2 47.4% 11.2%; /* hsl(222.2 47.4% 11.2%) */
+    --primary-foreground: 210 40% 98%; /* hsl(210 40% 98%) */
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%; /* hsl(222.2 84% 4.9%) */
+    --foreground: 210 40% 98%; /* hsl(210 40% 98%) */
+
+    --primary: 210 40% 98%; /* hsl(210 40% 98%) */
+    --primary-foreground: 222.2 47.4% 11.2%; /* hsl(222.2 47.4% 11.2%) */
+  }
+
+  body {
+    @apply bg-primary text-background;
+  }
+
+  ::-webkit-scrollbar {
+    @apply w-[6px] transition-all;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-transparent;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-md bg-[#a9a9a9];
+  }
+
+  ::-moz-selection {
+    @apply bg-primary text-background;
+  }
+
+  ::selection {
+    @apply bg-primary text-background;
+  }
+}
+
+@layer components {
+  .swiper .swiper-pagination-bullet {
+    background-color: hsl(var(--background)) !important;
+  }
+}
